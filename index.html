@@ -3,147 +3,227 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kişisel Portföy Siteniz</title>
+    <title>Nariman Rzayev | Kişisel Portfolyo</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <nav class="navbar">
+    <header class="navbar">
         <div class="container">
-            <a href="#" class="logo">Nariman Rzayev</a>
-            <ul class="nav-links">
-                <li><a href="#hakkimda">Hakkımda</a></li>
-                <li><a href="#cv">CV</a></li>
-                <li><a href="#projeler">Projeler</a></li>
-                <li><a href="#egitim">Eğitimler</a></li>
-                <li><a href="#iletisim">İletişim</a></li>
-            </ul>
-            <div class="mobil-menu-tusu">
-                <span></span>
-                <span></span>
-                <span></span>
+            <a href="#" class="logo">Nariman Rzayev.</a>
+
+            <nav class="nav-links">
+                <ul>
+                    <li><a href="#hero">Ana Sayfa</a></li>
+                    <li><a href="#hakkimda">Hakkımda</a></li>
+                    <li><a href="#projeler">Projeler</a></li>
+                    <li><a href="#egitim">Eğitim</a></li>
+                    <li><a href="#iletisim">İletişim</a></li>
+                </ul>
+            </nav>
+
+            <div class="header-sag">
+                <div class="theme-switch-wrapper">
+                    <label class="theme-switch" for="checkbox">
+                        <input type="checkbox" id="checkbox" />
+                        <div class="slider round">
+                            <i class="fas fa-sun sun-icon"></i>
+                            <i class="fas fa-moon moon-icon"></i>
+                        </div>
+                    </label>
+                </div>
+                <div class="hamburger">
+                    <i class="fas fa-bars"></i>
+                </div>
             </div>
-        </div>
-    </nav>
-
-    <header id="hakkimda" class="bolum">
-        <div class="container">
-            <h1>Merhaba, Ben Nariman</h1>
-            <p class="alt-baslik">Mesleğim Elektronik Mühendsiliği</p>
-            <p>
-                Merhaba, ben Nariman.
-                Elektronik mühendisliği öğrencisi, teknoloji odaklı bir girişimci adayı ve sürekli öğrenmeye açık bir geliştiriciyim. IoT, enerji verimliliği, yapay zeka ve akıllı sistemler üzerine projeler üretiyorum. ESP32, Raspberry Pi, sensör ağları, yapay zeka modelleri ve mobil uygulamalar gibi alanlarda aktif olarak çalışıyorum. Hem mühendislik hem de yazılım tarafında üretmeyi, gerçek sorunlara pratik çözümler geliştirmeyi seviyorum.
-
-                Hedefim; teknolojiyi insanların hayatını kolaylaştıran, verimliliği artıran ve geleceğe değer katan projelere dönüştürmek. Girişimcilik yolculuğuma hazırlanıyor, farklı alanlarda edindiğim tecrübeleri bir araya getirerek kendi markamı ve projelerimi inşa etmek için çalışıyorum.
-            </p>
-            <a href="#projeler" class="ana-buton">Projelerimi Gör</a>
         </div>
     </header>
 
-    <section id="cv" class="bolum bg-acik">
-        <div class="container">
-            <h2>CV / Deneyim</h2>
-            <div class="cv-icerik">
-                <div class="cv-bolumu">
-                    <h3>Eğitim</h3>
-                    <ul>
-                        <li><strong>Gebze Teknik Ünivesitesi</strong> (2020-2024) - Elektronik</li>
-                        <li><strong>Lise Adı</strong> (2016-2020)</li>
-                    </ul>
+    <main>
+        <section id="hero">
+            <div class="container hero-content">
+                <h1>Geleceğin Teknolojilerini Tasarlamak.</h1>
+                <p class="hero-subtitle">
+                    Ben Nariman Rzayev [cite: 19], Gebze Teknik Üniversitesi Elektronik Mühendisliği öğrencisiyim[cite: 20]. AR-GE projelerine, aviyonik sistemlere [cite: 26] ve çip teknolojilerine [cite: 34] tutkuyla bağlıyım.
+                </p>
+                <div class="hero-buttons">
+                    <a href="#projeler" class="btn btn-primary">Projelerimi Gör</a>
+                    <a href="Nariman_Rzayev_CV.pdf" target="_blank" class="btn btn-secondary">
+                        CV İndir <i class="fas fa-download"></i>
+                    </a>
                 </div>
-                <div class="cv-bolumu">
-                    <h3>İş Deneyimi</h3>
-                    <ul>
-                        <li><strong>Firma Adı</strong> (Pozisyon) - (2024-Günümüz)
-                            <p>Buraya sorumluluklarınız ve başarılarınız hakkında kısa bir açıklama yazın.</p>
-                        </li>
-                        <li><strong>Staj Yeri</strong> (Pozisyon) - (Yaz 2023)
-                            <p>Staj sırasında öğrendikleriniz ve katkılarınız.</p>
-                        </li>
-                    </ul>
-                </div>
-                <div class="cv-bolumu">
-                    <h3>Yetenekler</h3>
-                    <ul class="yetenekler-listesi">
-                        <li>HTML5</li>
-                        <li>CSS3</li>
-                        <li>JavaScript</li>
-                        <li>React</li>
-                        <li>Python</li>
-                        <li>Tasarım</li>
-                    </ul>
+                <div class="hero-socials">
+                    <a href="https://www.linkedin.com/in/nariman-rzayev-85a044230/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    <a href="mailto:rzayev.neriman06@gmail.com"><i class="fas fa-envelope"></i></a>
+                    <a href="#" target="_blank"><i class="fab fa-github"></i></a>
                 </div>
             </div>
-            <a href="link-to-your-cv.pdf" class="ana-buton" target="_blank">CV'mi İndir</a>
-        </div>
-    </section>
+        </section>
 
-    <section id="projeler" class="bolum">
-        <div class="container">
-            <h2>Projelerim</h2>
-            <div class="proje-galerisi">
-                <div class="proje-karti">
-                    <img src="proje1-gorsel.jpg" alt="Proje 1 Görseli">
-                    <h3>Proje Adı 1</h3>
-                    <p>Bu projede neler yapıldığını, hangi teknolojilerin kullanıldığını açıklayan kısa bir metin.</p>
-                    <a href="#" class="proje-linki" target="_blank">Proje Linki</a>
-                </div>
-                <div class="proje-karti">
-                    <img src="proje2-gorsel.jpg" alt="Proje 2 Görseli">
-                    <h3>Proje Adı 2</h3>
-                    <p>Bu projede neler yapıldığını, hangi teknolojilerin kullanıldığını açıklayan kısa bir metin.</p>
-                    <a href="#" class="proje-linki" target="_blank">Proje Linki</a>
-                </div>
-                <div class="proje-karti">
-                    <img src="proje3-gorsel.jpg" alt="Proje 3 Görseli">
-                    <h3>Proje Adı 3</h3>
-                    <p>Bu projede neler yapıldığını, hangi teknolojilerin kullanıldığını açıklayan kısa bir metin.</p>
-                    <a href="#" class="proje-linki" target="_blank">Proje Linki</a>
+        <section id="hakkimda" class="section-container">
+            <div class="container">
+                <h2 class="section-title">Hakkımda</h2>
+                <div class="hakkimda-content">
+                    <div class="hakkimda-text">
+                        <p>2001, Bakü doğumluyum[cite: 15, 16]. 2020 yılından bu yana Gebze Teknik Üniversitesi'nde Elektronik Mühendisliği lisans eğitimi almaktayım[cite: 51].</p>
+                        <p>Eğitim hayatım boyunca roket teknolojileri [cite: 22], batarya sistemleri [cite: 28], uydu görüntüleme [cite: 31] ve çip tasarımı [cite: 34] gibi çeşitli AR-GE projelerinde aktif rol aldım. Teknofest gibi yarışmalarda finalist olma başarısı gösterdim[cite: 37]. Problem çözmeye, ekip çalışmasına [cite: 66] ve proje yönetimine [cite: 65] odaklanarak kendimi sürekli geliştiriyorum.</p>
+                    </div>
+                    <div class="hakkimda-skills">
+                        <h3>Teknik Yetkinliklerim</h3>
+                        <div class="skills-grid">
+                            <span><i class="fas fa-code"></i> C / C++ [cite: 74]</span>
+                            <span><i class="fab fa-java"></i> Java [cite: 76]</span>
+                            <span><i class="fab fa-python"></i> Python [cite: 89]</span>
+                            <span><i class="fas fa-microchip"></i> VHDL / Verilog [cite: 36, 80]</span>
+                            <span><i class="fas fa-memory"></i> FPGA [cite: 36]</span>
+                            <span><i class="fas fa-robot"></i> Arduino [cite: 91]</span>
+                            <span><i class="fas fa-sitemap"></i> Kicad (PCB Tasarımı) [cite: 26, 78]</span>
+                            <span><i class="fas fa-bolt"></i> LTspice [cite: 82] / Multisim [cite: 86]</span>
+                            <span><i class="fas fa-wave-square"></i> MATLAB [cite: 84]</span>
+                            <span><i class="fab fa-html5"></i> HTML / CSS [cite: 32]</span>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="egitim" class="bolum bg-acik">
-        <div class="container">
-            <h2>Eğitim İçerikleri & Blog</h2>
-            <div class="blog-listesi">
-                <article class="blog-yazisi">
-                    <h3>Yazı Başlığı 1: Yeni Başlayanlar için JavaScript</h3>
-                    <p>Bu yazıda JavaScript'in temellerini ve modern web geliştirmedeki yerini ele aldım...</p>
-                    <a href="#" class="proje-linki">Yazıyı Oku</a>
-                </article>
-                <article class="blog-yazisi">
-                    <h3>Yazı Başlığı 2: İyi Bir Portföy Sitesi Nasıl Olmalı?</h3>
-                    <p>Profesyonel bir portföy sitesi hazırlarken dikkat edilmesi gereken UI/UX ipuçları...</p>
-                    <a href="#" class="proje-linki">Yazıyı Oku</a>
-                </article>
+        <section id="projeler" class="section-container">
+            <div class="container">
+                <h2 class="section-title">Projelerim</h2>
+                <div class="projeler-grid">
+                    <div class="proje-karti">
+                        <div class="proje-img">
+                            <img src="https://images.unsplash.com/photo-1614995939223-f32c40661602?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wzOTk3MTh8MHwxfGFsbHx8fHx8fHx8fDE3MzE3MDk4NTl8&ixlib=rb-4.0.3&q=80&w=400" alt="Çip Teknolojisi Projesi">
+                        </div>
+                        <div class="proje-info">
+                            <h3>GİTT (Çip Teknoloji Projesi) [cite: 34]</h3>
+                            <p>TÜBİTAK BİLGEM [cite: 35] ve Aselsan [cite: 35] için yürütülen AR-GE projesi. Visual Studio Code üzerinde VHDL ve FPGA Verilog [cite: 36] kullanarak çip tasarımı geliştirdim. Teknofest'te finalist olduk[cite: 37].</p>
+                            <div class="proje-tags">
+                                <span>VHDL</span>
+                                <span>FPGA</span>
+                                <span>Teknofest</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="proje-karti">
+                        <div class="proje-img">
+                            <img src="https://images.unsplash.com/photo-1541185934-01b600ea069c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wzOTk3MTh8MHwxfGFsbHx8fHx8fHx8fDE3MzE3MDk5MTN8&ixlib=rb-4.0.3&q=80&w=400" alt="Roket Projesi">
+                        </div>
+                        <div class="proje-info">
+                            <h3>MONARK Roket Projesi [cite: 22]</h3>
+                            <p>Aviyonik sistem yazılımını Arduino [cite: 26] ile geliştirdim. Kicad [cite: 26] programında PCB kart tasarımı ve OpenRocket [cite: 26] ile roket simülasyonları yaptım. Teknofest'te ÖTR raporunu başarıyla geçtik[cite: 26].</p>
+                            <div class="proje-tags">
+                                <span>Arduino</span>
+                                <span>Kicad</span>
+                                <span>Aviyonik</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="proje-karti">
+                        <div class="proje-img">
+                            <img src="https://images.unsplash.com/photo-1446776811953-b23d5795b4e6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wzOTk3MTh8MHwxfGFsbHx8fHx8fHx8fDE3MzE3MDk5NTZ8&ixlib=rb-4.0.3&q=80&w=400" alt="Uydu Görüntüleme Projesi">
+                        </div>
+                        <div class="proje-info">
+                            <h3>TUGS (Uydu Görüntüleme Sistemi) [cite: 31]</h3>
+                            <p>Türkiye'nin uydu görüntüleme sistemlerini geliştirmek amacıyla C++, Java, HTML ve CSS [cite: 32] kullanarak arayüz ve sistem geliştirmesi yaptım.</p>
+                            <div class="proje-tags">
+                                <span>C++</span>
+                                <span>Java</span>
+                                <span>HTML/CSS</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="proje-karti">
+                        <div class="proje-img">
+                            <img src="https://images.unsplash.com/photo-1627885996459-6518b08bbb63?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wzOTk3MTh8MHwxfGFsbHx8fHx8fHx8fDE3MzE3MTAwMTF8&ixlib=rb-4.0.3&q=80&w=400" alt="Batarya Teknoloji Projesi">
+                        </div>
+                        <div class="proje-info">
+                            <h3>TBTT (Batarya Teknoloji Projesi) [cite: 28]</h3>
+                            <p>TÜBİTAK TÜSSİDE [cite: 30] için Li-İyon [cite: 30] malzemeleri üzerine araştırma ve Kicad [cite: 30] ile prototip devre tasarımı çalışmaları yürüttüm.</p>
+                            <div class="proje-tags">
+                                <span>Li-İyon</span>
+                                <span>Kicad</span>
+                                <span>AR-GE</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="iletisim" class="bolum">
-        <div class="container">
-            <h2>İletişim</h2>
-            <p>Benimle iletişime geçmek için aşağıdaki formu kullanabilir veya sosyal medya hesaplarımdan ulaşabilirsiniz.</p>
-            <form class="iletisim-formu">
-                <input type="text" placeholder="Adınız" required>
-                <input type="email" placeholder="E-posta Adresiniz" required>
-                <textarea placeholder="Mesajınız" rows="5" required></textarea>
-                <button type="submit" class="ana-buton">Gönder</button>
-            </form>
-            <div class="sosyal-medya">
-                <a href="#">LinkedIn</a>
-                <a href="#">GitHub</a>
-                <a href="#">Twitter</a>
+        <section id="egitim" class="section-container">
+            <div class="container">
+                <h2 class="section-title">Eğitim & İçerikler</h2>
+                <p class="section-subtitle">Talebiniz üzerine burayı ileride doldurabileceğiniz bir "Eğitim İçerikleri / Blog" bölümü olarak tasarladım. Şimdilik eğitim geçmişinizi gösteriyor.</p>
+
+                <div class="egitim-grid">
+                    <div class="egitim-karti">
+                        <div class="egitim-icon"><i class="fas fa-university"></i></div>
+                        <h3>Gebze Teknik Üniversitesi</h3>
+                        <p>Elektronik Mühendisliği (Lisans) [cite: 51]</p>
+                        <span>2020 - Devam Ediyor [cite: 51]</span>
+                    </div>
+                    <div class="egitim-karti">
+                        <div class="egitim-icon"><i class="fas fa-language"></i></div>
+                        <h3>Gebze Teknik Üniversitesi</h3>
+                        <p>Türkçe ve İngilizce Hazırlık [cite: 53]</p>
+                        <span>2018 - 2020 [cite: 53]</span>
+                    </div>
+                    <div class="egitim-karti">
+                        <div class="egitim-icon"><i class="fas fa-school"></i></div>
+                        <h3>308 Saylı Lise</h3>
+                        <p>Lise Eğitimi [cite: 55]</p>
+                        <span>2007 - 2018 [cite: 55]</span>
+                    </div>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <footer>
+        <section id="iletisim" class="section-container">
+            <div class="container">
+                <h2 class="section-title">İletişime Geçin</h2>
+                <div class="iletisim-content">
+                    <div class="iletisim-info">
+                        <h3>Bilgiler</h3>
+                        <p><i class="fas fa-map-marker-alt"></i> Darıca, Kocaeli [cite: 3, 4]</p>
+                        <p><i class="fas fa-envelope"></i> rzayev.neriman06@gmail.com [cite: 8]</p>
+                        <p><i class="fas fa-phone"></i> +90 545 160 68 61 [cite: 6]</p>
+                        <p><i class="fab fa-linkedin"></i> linkedin.com/in/nariman-rzayev [cite: 12]</p>
+                    </div>
+                    <form action="#" class="iletisim-form" onsubmit="alert('Mesajınız gönderildi! (Bu form test amaçlıdır, bir yere bağlanmamıştır.)'); return false;">
+                        <h3>Bana Mesaj Gönderin</h3>
+                        <div class="form-grup">
+                            <input type="text" name="name" placeholder="Adınız Soyadınız" required>
+                        </div>
+                        <div class="form-grup">
+                            <input type="email" name="email" placeholder="E-posta Adresiniz" required>
+                        </div>
+                        <div class="form-grup">
+                            <textarea name="message" rows="6" placeholder="Mesajınız" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Gönder</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer">
         <div class="container">
-            <p>&copy; 2025 [Adınız Soyadınız]. Tüm hakları saklıdır.</p>
+            <div class="footer-socials">
+                <a href="https://www.linkedin.com/in/nariman-rzayev-85a044230/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="mailto:rzayev.neriman06@gmail.com"><i class="fas fa-envelope"></i></a>
+                <a href="#" target="_blank"><i class="fab fa-github"></i></a>
+            </div>
+            <p>&copy; <span id="current-year"></span> Nariman Rzayev. Tüm hakları saklıdır.</p>
         </div>
     </footer>
 

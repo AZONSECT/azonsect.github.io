@@ -1,26 +1,55 @@
+// Kodların çalışması için DOM'un tamamen yüklenmesini bekliyoruz
 document.addEventListener('DOMContentLoaded', () => {
-    
-    // Mobil menü tetiğini ve menü linklerini seç
-    const menuTusu = document.querySelector('.mobil-menu-tusu');
-    const navLinks = document.querySelector('.nav-links');
 
-    // Menü tuşuna tıklandığında
-    menuTusu.addEventListener('click', () => {
-        // nav-links elementine 'active' class'ını ekle/kaldır
-        navLinks.classList.toggle('active');
-        
-        // Menü tuşuna 'active' class'ını ekle/kaldır (X animasyonu için)
-        menuTusu.classList.toggle('active');
+    // ===== KARANLIK MOD DEĞİŞTİRİCİ =====
+    const themeToggle = document.getElementById('checkbox');
+    const body = document.body;
+
+    // Sayfa yüklendiğinde kullanıcının son tercihini kontrol et (localStorage)
+    if (localStorage.getItem('theme') === 'dark') {
+        body.classList.add('dark-mode');
+        themeToggle.checked = true;
+    }
+
+    // Butona tıklandığında modu değiştir
+    themeToggle.addEventListener('change', () => {
+        if (themeToggle.checked) {
+            body.classList.add('dark-mode');
+            localStorage.setItem('theme', 'dark'); // Tercihi kaydet
+        } else {
+            body.classList.remove('dark-mode');
+            localStorage.setItem('theme', 'light'); // Tercihi kaydet
+        }
     });
 
-    // Menüdeki bir linke tıklandığında menüyü kapat
-    document.querySelectorAll('.nav-links a').forEach(link => {
+
+    // ===== MOBİL MENÜ (HAMBURGER) =====
+    const hamburger = document.querySelector('.hamburger');
+    const navLinks = document.querySelector('.nav-links');
+    const links = navLinks.querySelectorAll('a'); // Menüdeki linkler
+
+    // Hamburger ikona tıklandığında menüyü aç/kapat
+    hamburger.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+        // Hamburger ikonu animasyonu (isteğe bağlı, CSS ile yapılabilir)
+        hamburger.classList.toggle('is-active'); 
+    });
+
+    // Mobil menüde bir linke tıklandığında menüyü kapat
+    links.forEach(link => {
         link.addEventListener('click', () => {
             if (navLinks.classList.contains('active')) {
                 navLinks.classList.remove('active');
-                menuTusu.classList.remove('active');
+                hamburger.classList.remove('is-active');
             }
         });
     });
 
+
+    // ===== FOOTER YIL GÜNCELLEYİCİ =====
+    const currentYearSpan = document.getElementById('current-year');
+    if (currentYearSpan) {
+        currentYearSpan.textContent = new Date().getFullYear();
+    }
+    
 });
