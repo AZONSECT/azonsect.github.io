@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
     hamburger.addEventListener('click', () => {
         navLinks.classList.toggle('active');
         // Hamburger ikonu animasyonu (isteğe bağlı, CSS ile yapılabilir)
-        hamburger.classList.toggle('is-active'); 
+        hamburger.classList.toggle('is-active');
     });
 
     // Mobil menüde bir linke tıklandığında menüyü kapat
@@ -51,5 +51,5 @@ document.addEventListener('DOMContentLoaded', () => {
     if (currentYearSpan) {
         currentYearSpan.textContent = new Date().getFullYear();
     }
-    
+
 });
