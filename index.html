@@ -1,254 +1,506 @@
 <!DOCTYPE html>
-<html lang="tr">
+<html lang="tr" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nariman Rzayev | Kişisel Portfolyo</title>
+    <title>AZSONTECH Holding</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome İkonları -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        azson: {
+                            blue: '#0F4C81',  /* Kurumsal Mavi */
+                            dark: '#0f172a',  /* Dark Mode Arkaplan */
+                            accent: '#3B82F6' /* Vurgu Rengi */
+                        }
+                    },
+                    animation: {
+                        'fade-in': 'fadeIn 1s ease-out',
+                        'slide-up': 'slideUp 0.5s ease-out',
+                    },
+                    keyframes: {
+                        fadeIn: {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        },
+                        slideUp: {
+                            '0%': { transform: 'translateY(20px)', opacity: '0' },
+                            '100%': { transform: 'translateY(0)', opacity: '1' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Genel Geçiş Efektleri */
+        body, header, div, section, footer, h1, h2, h3, p, span, li, i {
+            transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
+        }
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+        /* Kart Hover Efekti */
+        .company-card {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
 
-    <link rel="stylesheet" href="style.css">
+            .company-card:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            }
+
+        /* İkon Animasyonu */
+        .icon-box:hover i {
+            transform: scale(1.1) rotate(5deg);
+        }
+    </style>
 </head>
-<body>
+<body class="bg-gray-50 text-gray-800 dark:bg-azson-dark dark:text-gray-100 font-sans flex flex-col min-h-screen">
 
-    <header class="navbar">
-        <div class="container">
-            <a href="#" class="logo">Nariman Rzayev.</a>
+    <!-- Navigasyon -->
+    <header class="fixed w-full top-0 z-50 bg-white/95 dark:bg-gray-900/95 backdrop-blur-sm shadow-sm border-b border-gray-100 dark:border-gray-800">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <!-- Logo -->
+            <a href="#" class="text-2xl font-extrabold tracking-tighter text-azson-blue dark:text-blue-400 flex items-center gap-2">
+                <div class="w-8 h-8 bg-gradient-to-br from-azson-blue to-blue-600 dark:from-blue-500 dark:to-blue-700 rounded text-white flex items-center justify-center text-sm shadow-lg">A</div>
+                AZSONTECH
+            </a>
 
-            <nav class="nav-links">
-                <ul>
-                    <li><a href="#hero">Ana Sayfa</a></li>
-                    <li><a href="#hakkimda">Hakkımda</a></li>
-                    <li><a href="#projeler">Projeler</a></li>
-                    <li><a href="#egitim">Eğitim & Yetkinlikler</a></li>
-                    <li><a href="#iletisim">İletişim</a></li>
-                    <li><a href="founder.html">Kurucuyu Tanıyın</a></li>
-                </ul>
+            <!-- Menü (Desktop) -->
+            <nav class="hidden md:flex gap-8 font-medium text-sm uppercase tracking-wide">
+                <a href="#hero" class="hover:text-azson-blue dark:hover:text-blue-400 transition py-2 relative group">
+                    Ana Sayfa
+                    <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-azson-blue dark:bg-blue-400 transition-all group-hover:w-full"></span>
+                </a>
+                <a href="#structure" class="hover:text-azson-blue dark:hover:text-blue-400 transition py-2 relative group">
+                    Holding Yapısı
+                    <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-azson-blue dark:bg-blue-400 transition-all group-hover:w-full"></span>
+                </a>
+                <a href="#vision" class="hover:text-azson-blue dark:hover:text-blue-400 transition py-2 relative group">
+                    Vizyon
+                    <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-azson-blue dark:bg-blue-400 transition-all group-hover:w-full"></span>
+                </a>
+                <a href="#contact" class="hover:text-azson-blue dark:hover:text-blue-400 transition py-2 relative group">
+                    İletişim
+                    <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-azson-blue dark:bg-blue-400 transition-all group-hover:w-full"></span>
+                </a>
             </nav>
 
-            <div class="header-sag">
-                <div class="theme-switch-wrapper">
-                    <label class="theme-switch" for="checkbox">
-                        <input type="checkbox" id="checkbox" />
-                        <div class="slider round">
-                            <i class="fas fa-sun sun-icon"></i>
-                            <i class="fas fa-moon moon-icon"></i>
-                        </div>
-                    </label>
-                </div>
-                <div class="hamburger">
+            <!-- Dark Mode & Mobile Menu -->
+            <div class="flex items-center gap-4">
+                <button id="theme-toggle" class="w-10 h-10 rounded-full bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 transition flex items-center justify-center focus:outline-none ring-2 ring-transparent focus:ring-azson-blue">
+                    <i id="theme-icon" class="fas fa-moon text-gray-600 dark:text-yellow-400 transition-transform duration-500"></i>
+                </button>
+
+                <button class="md:hidden text-2xl text-gray-600 dark:text-gray-300 focus:outline-none">
                     <i class="fas fa-bars"></i>
-                </div>
+                </button>
             </div>
         </div>
     </header>
 
-    <main>
-        <section id="hero">
-            <div class="container hero-content">
-                <h1>Geleceğin Teknolojilerini Tasarlamak.</h1>
-                <p class="hero-subtitle">
-                    Elektronik, aviyonik ve gömülü sistemler alanında uzmanlaşan; roket, batarya teknolojisi, uydu görüntüleme ve çip tasarımı gibi yüksek teknolojili projelerde aktif görev almış mühendis adayı. FPGA (VHDL/Verilog), PCB tasarımı, mikrodenetleyici programlama ve yazılım geliştirme konusunda deneyim sahibi. Ar-Ge, savunma sanayi, enerji ve uzay teknolojileri alanlarında çalışmayı hedefleyen disiplinli, meraklı ve çözüm odaklı bir elektronik mühendisi.
-                </p>
-                <div class="hero-buttons">
-                    <a href="#projeler" class="btn btn-primary">Projelerimi Gör</a>
-                    <a href="Nariman_Rzayev_CV.pdf" target="_blank" class="btn btn-secondary">
-                        CV İndir <i class="fas fa-download"></i>
-                    </a>
-                </div>
-                <div class="hero-socials">
-                    <a href="linkedin.com/in/nəriman-rzayev-020424209" target="_blank"><i class="fab fa-linkedin"></i></a>
-                    <a href="mailto:rzayev.neriman06@gmail.com"><i class="fas fa-envelope"></i></a>
-                    <a href="#" target="_blank"><i class="fab fa-github"></i></a>
-                </div>
-            </div>
-        </section>
-
-        <section id="hakkimda" class="section-container">
-            <div class="container">
-                <h2 class="section-title">Hakkımda</h2>
-                <div class="hakkimda-content">
-                    <div class="hakkimda-text">
-                        <p>2001, Bakü doğumluyum. 2020 yılından bu yana Gebze Teknik Üniversitesi'nde Elektronik Mühendisliği lisans eğitimi almaktayım.</p>
-                        <p>Eğitim hayatım boyunca roket teknolojileri, batarya sistemleri, uydu görüntüleme ve çip tasarımı gibi çeşitli AR-GE projelerinde aktif rol aldım. Teknofest gibi yarışmalarda finalist olma başarısı gösterdim. Problem çözmeye, ekip çalışmasına ve proje yönetimine odaklanarak kendimi sürekli geliştiriyorum.</p>
-                    </div>
-                    <div class="hakkimda-skills">
-                        <h3>Teknik Yetkinliklerim</h3>
-                        <div class="skills-grid">
-                            <span><i class="fas fa-code"></i> C / C++ </span>
-                            <span><i class="fab fa-java"></i> Java </span>
-                            <span><i class="fab fa-python"></i> Python </span>
-                            <span><i class="fas fa-microchip"></i> VHDL / Verilog </span>
-                            <span><i class="fas fa-memory"></i> FPGA </span>
-                            <span><i class="fas fa-robot"></i> Arduino </span>
-                            <span><i class="fas fa-sitemap"></i> Kicad (PCB Tasarımı) </span>
-                            <span><i class="fas fa-bolt"></i> LTspice / Multisim </span>
-                            <span><i class="fas fa-wave-square"></i> MATLAB </span>
-                            <span><i class="fab fa-html5"></i> HTML / CSS </span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="projeler" class="section-container">
-            <div class="container">
-                <h2 class="section-title">Projelerim</h2>
-                <div class="projeler-grid">
-                    <div class="proje-karti">
-                        <div class="proje-img">
-                            <img src="proje-cip.jpg" alt="Çip Teknolojisi Projesi">
-                        </div>
-                        <div class="proje-info">
-                            <h3>GİTT (Çip Teknoloji Projesi) </h3>
-                            <p>TÜBİTAK BİLGEM  ve Aselsan için yürütülen AR-GE projesi. Visual Studio Code üzerinde VHDL ve FPGA Verilog kullanarak çip tasarımı geliştirdim. Teknofest'te finalist olduk.</p>
-                            <div class="proje-tags">
-                                <span>VHDL</span>
-                                <span>FPGA</span>
-                                <span>Teknofest</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="proje-karti">
-                        <div class="proje-img">
-                            <img src="proje-roket.jpg" alt="Roket Projesi">
-                        </div>
-                        <div class="proje-info">
-                            <h3>MONARK Roket Projesi </h3>
-                            <p>Aviyonik sistem yazılımını Arduino ile geliştirdim. Kicad programında PCB kart tasarımı ve OpenRocket ile roket simülasyonları yaptım. Teknofest'te ÖTR raporunu başarıyla geçtik.</p>
-                            <div class="proje-tags">
-                                <span>Arduino</span>
-                                <span>Kicad</span>
-                                <span>Aviyonik</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="proje-karti">
-                        <div class="proje-img">
-                            <img src="proje-uydu.jpg" alt="Uydu Görüntüleme Projesi">
-                        </div>
-                        <div class="proje-info">
-                            <h3>TUGS (Uydu Görüntüleme Sistemi)</h3>
-                            <p>Türkiye'nin uydu görüntüleme sistemlerini geliştirmek amacıyla C++, Java, HTML ve CSS kullanarak arayüz ve sistem geliştirmesi yaptım.</p>
-                            <div class="proje-tags">
-                                <span>C++</span>
-                                <span>Java</span>
-                                <span>HTML/CSS</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="proje-karti">
-                        <div class="proje-img">
-                            <img src="proje-batarya.jpg" alt="Batarya Teknoloji Projesi">
-                        </div>
-                        <div class="proje-info">
-                            <h3>TBTT (Batarya Teknoloji Projesi) </h3>
-                            <p>TÜBİTAK TÜSSİDE için Li-İyon malzemeleri üzerine araştırma ve Kicad ile prototip devre tasarımı çalışmaları yürüttüm.</p>
-                            <div class="proje-tags">
-                                <span>Li-İyon</span>
-                                <span>Kicad</span>
-                                <span>AR-GE</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="egitim" class="section-container">
-            <div class="container">
-                <h2 class="section-title">Eğitim & Dil Becerileri</h2>
-                <div class="egitim-grid">
-                    <div class="egitim-karti">
-                        <div class="egitim-icon"><i class="fas fa-university"></i></div>
-                        <h3>Gebze Teknik Üniversitesi</h3>
-                        <p>Elektronik Mühendisliği (Lisans) </p>
-                        <span>2020 - Devam Ediyor </span>
-                    </div>
-                    <div class="egitim-karti">
-                        <div class="egitim-icon"><i class="fas fa-language"></i></div>
-                        <h3>Gebze Teknik Üniversitesi</h3>
-                        <p>Türkçe ve İngilizce Hazırlık </p>
-                        <span>2018 - 2020 </span>
-                    </div>
-                    <div class="egitim-karti">
-                        <div class="egitim-icon"><i class="fas fa-school"></i></div>
-                        <h3>308 Saylı Lise</h3>
-                        <p>Lise Eğitimi </p>
-                        <span>2007 - 2018 </span>
-                    </div>
-                </div>
-
-                <div class="dil-becerileri">
-                    <h3>Dil Becerileri</h3>
-                    <div class="dil-grid">
-                        <div class="dil-karti">
-                            <strong>Azerbaycan Türkçesi</strong>
-                            <span>Ana Dil (C2)</span>
-                        </div>
-                        <div class="dil-karti">
-                            <strong>Türkçe</strong>
-                            <span>İleri Seviye (C1)</span>
-                        </div>
-                        <div class="dil-karti">
-                            <strong>İngilizce</strong>
-                            <span>Orta Üstü Seviye (B2)</span>
-                        </div>
-                        <div class="dil-karti">
-                            <strong>Rusça</strong>
-                            <span>Başlangıç Seviyesi (A2)</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="iletisim" class="section-container">
-            <div class="container">
-                <h2 class="section-title">İletişime Geçin</h2>
-                <div class="iletisim-content">
-                    <div class="iletisim-info">
-                        <h3>Bilgiler</h3>
-                        <p><i class="fas fa-map-marker-alt"></i> Darıca, Kocaeli </p>
-                        <p><i class="fas fa-envelope"></i> rzayev.neriman06@gmail.com </p>
-                        <p><i class="fas fa-phone"></i> +90 545 160 68 61 </p>
-                        <p><i class="fab fa-linkedin"></i> linkedin.com/in/nariman-rzayev </p>
-                        <p><i class="fab fa-skype"></i> Nariman Rzayev (Skype)</p>
-                    </div>
-                    <form action="#" class="iletisim-form" onsubmit="alert('Mesajınız gönderildi! (Bu form test amaçlıdır, bir yere bağlanmamıştır.)'); return false;">
-                        <h3>Bana Mesaj Gönderin</h3>
-                        <div class="form-grup">
-                            <input type="text" name="name" placeholder="Adınız Soyadınız" required>
-                        </div>
-                        <div class="form-grup">
-                            <input type="email" name="email" placeholder="E-posta Adresiniz" required>
-                        </div>
-                        <div class="form-grup">
-                            <textarea name="message" rows="6" placeholder="Mesajınız" required></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-primary">Gönder</button>
-                    </form>
-                </div>
-            </div>
-        </section>
-
-    </main>
-
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-socials">
-                <a href="https://www.linkedin.com/in/nariman-rzayev-85a044230/" target="_blank"><i class="fab fa-linkedin"></i></a>
-                <a href="mailto:rzayev.neriman06@gmail.com"><i class="fas fa-envelope"></i></a>
-                <a href="#" target="_blank"><i class="fab fa-github"></i></a>
-            </div>
-            <p>&copy; <span id="current-year"></span> Nariman Rzayev. Tüm hakları saklıdır.</p>
+    <!-- Hero Bölümü -->
+    <section id="hero" class="relative pt-40 pb-24 px-6 min-h-[75vh] flex items-center justify-center overflow-hidden">
+        <!-- Arkaplan Deseni -->
+        <div class="absolute inset-0 z-0">
+            <div class="absolute inset-0 bg-gradient-to-br from-gray-50 via-blue-50/50 to-white dark:from-gray-900 dark:via-gray-800 dark:to-gray-900"></div>
+            <!-- Animated Globs -->
+            <div class="absolute top-0 right-0 -mt-20 -mr-20 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl dark:bg-blue-600/20 animate-pulse"></div>
+            <div class="absolute bottom-0 left-0 -mb-20 -ml-20 w-96 h-96 bg-indigo-500/10 rounded-full blur-3xl dark:bg-indigo-600/20 animate-pulse" style="animation-delay: 1s;"></div>
         </div>
-    </footer>
 
-    <script src="script.js"></script>
+        <div class="container mx-auto text-center z-10 animate-fade-in relative">
+            <span class="inline-block py-1.5 px-4 rounded-full bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 shadow-sm text-azson-blue dark:text-blue-300 text-xs font-bold uppercase tracking-widest mb-8">
+                Geleceğin Stratejik Mimarisi
+            </span>
+            <h1 class="text-5xl md:text-7xl font-extrabold mb-8 leading-tight tracking-tight text-gray-900 dark:text-white">
+                AZSONTECH <br />
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-azson-blue to-indigo-600 dark:from-blue-400 dark:to-indigo-400">HOLDING</span>
+            </h1>
+            <p class="text-xl md:text-2xl text-gray-600 dark:text-gray-300 max-w-4xl mx-auto mb-12 font-light leading-relaxed">
+                4 Stratejik Ana Çatı Altında Birleşen <span class="font-semibold text-gray-900 dark:text-white">11 Uzman Firma</span>.<br>
+                Teknoloji, Kamu, Enerji ve İnsan Odaklı Dönüşüm.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center gap-5">
+                <a href="#structure" class="bg-azson-blue hover:bg-blue-800 dark:bg-blue-600 dark:hover:bg-blue-500 text-white px-8 py-4 rounded-xl font-bold shadow-xl shadow-blue-900/20 transition transform hover:-translate-y-1 flex items-center justify-center gap-2">
+                    Yapımızı Keşfedin <i class="fas fa-chevron-down text-xs"></i>
+                </a>
+                <a href="#vision" class="bg-white hover:bg-gray-50 dark:bg-gray-800 dark:hover:bg-gray-700 text-gray-900 dark:text-white border border-gray-200 dark:border-gray-700 px-8 py-4 rounded-xl font-bold shadow-sm transition flex items-center justify-center gap-2">
+                    Holding Vizyonu <i class="fas fa-arrow-right text-xs"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Holding Yapısı (Ana Bölüm - Stratejik Kümelendirme) -->
+    <section id="structure" class="py-24 bg-white dark:bg-gray-900 relative">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-20">
+                <h2 class="text-sm font-bold text-azson-blue dark:text-blue-400 uppercase tracking-widest mb-3">Stratejik Yapılanma</h2>
+                <h3 class="text-3xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6">4 Temel Ana Şirket</h3>
+                <p class="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto text-lg">
+                    Yatırımcıya sade ve güçlü bir yapı sunan, alanların iç içe geçerek marka değerini artırdığı entegre ekosistem.
+                </p>
+            </div>
+
+            <!-- Grid Yapısı -->
+            <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-8 relative z-10">
+
+                <!-- 1. TechCore (Teknoloji ve Mühendislik) -->
+                <div class="company-card group bg-gray-50 dark:bg-gray-800 rounded-3xl p-1 border border-gray-100 dark:border-gray-700 h-full flex flex-col">
+                    <div class="bg-white dark:bg-gray-800/50 rounded-[1.4rem] p-8 flex-1 flex flex-col h-full relative overflow-hidden">
+                        <!-- Header Background Accent -->
+                        <div class="absolute top-0 right-0 w-32 h-32 bg-blue-500/5 rounded-bl-full -mr-8 -mt-8 pointer-events-none"></div>
+
+                        <div class="icon-box w-16 h-16 bg-blue-100 dark:bg-blue-900/30 rounded-2xl flex items-center justify-center mb-6 text-blue-600 dark:text-blue-400 transition-transform duration-500">
+                            <i class="fas fa-robot text-3xl"></i>
+                        </div>
+
+                        <h4 class="text-2xl font-bold mb-2 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">TechCore</h4>
+                        <span class="text-xs font-bold text-blue-600 dark:text-blue-400 uppercase tracking-wider mb-4 border-b border-blue-100 dark:border-blue-900/50 pb-4 block">Teknoloji & Mühendislik</span>
+
+                        <p class="text-gray-600 dark:text-gray-400 text-sm mb-8 leading-relaxed">
+                            Otonom sistemler, yapay zeka ve ileri mühendislik çekirdeği. Geleceğin mobilite ve üretim teknolojileri.
+                        </p>
+
+                        <!-- Alt Firmalar Listesi -->
+                        <div class="mt-auto space-y-4">
+                            <div class="flex items-start gap-3 p-3 rounded-xl bg-blue-50/50 dark:bg-blue-900/10 hover:bg-blue-100 dark:hover:bg-blue-900/20 transition">
+                                <i class="fas fa-plane text-blue-500 mt-1"></i>
+                                <div>
+                                    <h5 class="text-sm font-bold text-gray-900 dark:text-white">İnsansız Teknoloji</h5>
+                                    <p class="text-xs text-gray-500 dark:text-gray-400">Şirket #4</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-3 p-3 rounded-xl bg-blue-50/50 dark:bg-blue-900/10 hover:bg-blue-100 dark:hover:bg-blue-900/20 transition">
+                                <i class="fas fa-microchip text-blue-500 mt-1"></i>
+                                <div>
+                                    <h5 class="text-sm font-bold text-gray-900 dark:text-white">Robot & Uygulama</h5>
+                                    <p class="text-xs text-gray-500 dark:text-gray-400">Şirket #8</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-3 p-3 rounded-xl bg-blue-50/50 dark:bg-blue-900/10 hover:bg-blue-100 dark:hover:bg-blue-900/20 transition">
+                                <i class="fas fa-car text-blue-500 mt-1"></i>
+                                <div>
+                                    <h5 class="text-sm font-bold text-gray-900 dark:text-white">Araba Teknolojisi</h5>
+                                    <p class="text-xs text-gray-500 dark:text-gray-400">Şirket #9</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2. PublicTech (Kamu Sistemleri) -->
+                <div class="company-card group bg-gray-50 dark:bg-gray-800 rounded-3xl p-1 border border-gray-100 dark:border-gray-700 h-full flex flex-col">
+                    <div class="bg-white dark:bg-gray-800/50 rounded-[1.4rem] p-8 flex-1 flex flex-col h-full relative overflow-hidden">
+                        <div class="absolute top-0 right-0 w-32 h-32 bg-red-500/5 rounded-bl-full -mr-8 -mt-8 pointer-events-none"></div>
+
+                        <div class="icon-box w-16 h-16 bg-red-100 dark:bg-red-900/30 rounded-2xl flex items-center justify-center mb-6 text-red-600 dark:text-red-400 transition-transform duration-500">
+                            <i class="fas fa-shield-alt text-3xl"></i>
+                        </div>
+
+                        <h4 class="text-2xl font-bold mb-2 dark:text-white group-hover:text-red-600 dark:group-hover:text-red-400 transition-colors">PublicTech</h4>
+                        <span class="text-xs font-bold text-red-600 dark:text-red-400 uppercase tracking-wider mb-4 border-b border-red-100 dark:border-red-900/50 pb-4 block">Savunma, Tıp & Adalet</span>
+
+                        <p class="text-gray-600 dark:text-gray-400 text-sm mb-8 leading-relaxed">
+                            Toplumsal düzeni ve güvenliği sağlayan kritik kamu sistemleri. "Civic Systems" olarak da bilinir.
+                        </p>
+
+                        <div class="mt-auto space-y-4">
+                            <div class="flex items-start gap-3 p-3 rounded-xl bg-red-50/50 dark:bg-red-900/10 hover:bg-red-100 dark:hover:bg-red-900/20 transition">
+                                <i class="fas fa-fighter-jet text-red-500 mt-1"></i>
+                                <div>
+                                    <h5 class="text-sm font-bold text-gray-900 dark:text-white">Savunma Teknolojisi</h5>
+                                    <p class="text-xs text-gray-500 dark:text-gray-400">Şirket #5</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-3 p-3 rounded-xl bg-red-50/50 dark:bg-red-900/10 hover:bg-red-100 dark:hover:bg-red-900/20 transition">
+                                <i class="fas fa-heartbeat text-red-500 mt-1"></i>
+                                <div>
+                                    <h5 class="text-sm font-bold text-gray-900 dark:text-white">Tıp Teknolojisi</h5>
+                                    <p class="text-xs text-gray-500 dark:text-gray-400">Şirket #6</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-3 p-3 rounded-xl bg-red-50/50 dark:bg-red-900/10 hover:bg-red-100 dark:hover:bg-red-900/20 transition">
+                                <i class="fas fa-balance-scale text-red-500 mt-1"></i>
+                                <div>
+                                    <h5 class="text-sm font-bold text-gray-900 dark:text-white">Adalet Teknolojisi</h5>
+                                    <p class="text-xs text-gray-500 dark:text-gray-400">Şirket #10</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 3. GreenWorks (Altyapı ve Yaşam) -->
+                <div class="company-card group bg-gray-50 dark:bg-gray-800 rounded-3xl p-1 border border-gray-100 dark:border-gray-700 h-full flex flex-col">
+                    <div class="bg-white dark:bg-gray-800/50 rounded-[1.4rem] p-8 flex-1 flex flex-col h-full relative overflow-hidden">
+                        <div class="absolute top-0 right-0 w-32 h-32 bg-emerald-500/5 rounded-bl-full -mr-8 -mt-8 pointer-events-none"></div>
+
+                        <div class="icon-box w-16 h-16 bg-emerald-100 dark:bg-emerald-900/30 rounded-2xl flex items-center justify-center mb-6 text-emerald-600 dark:text-emerald-400 transition-transform duration-500">
+                            <i class="fas fa-seedling text-3xl"></i>
+                        </div>
+
+                        <h4 class="text-2xl font-bold mb-2 dark:text-white group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors">GreenWorks</h4>
+                        <span class="text-xs font-bold text-emerald-600 dark:text-emerald-400 uppercase tracking-wider mb-4 border-b border-emerald-100 dark:border-emerald-900/50 pb-4 block">Enerji & Tarım</span>
+
+                        <p class="text-gray-600 dark:text-gray-400 text-sm mb-8 leading-relaxed">
+                            Yaşamı sürdüren sistemler. Sürdürülebilirlik, kaynak yönetimi, gıda ve enerji güvenliği.
+                        </p>
+
+                        <div class="mt-auto space-y-4">
+                            <div class="flex items-start gap-3 p-3 rounded-xl bg-emerald-50/50 dark:bg-emerald-900/10 hover:bg-emerald-100 dark:hover:bg-emerald-900/20 transition">
+                                <i class="fas fa-solar-panel text-emerald-500 mt-1"></i>
+                                <div>
+                                    <h5 class="text-sm font-bold text-gray-900 dark:text-white">Enerji Teknolojisi</h5>
+                                    <p class="text-xs text-gray-500 dark:text-gray-400">Şirket #1</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-3 p-3 rounded-xl bg-emerald-50/50 dark:bg-emerald-900/10 hover:bg-emerald-100 dark:hover:bg-emerald-900/20 transition">
+                                <i class="fas fa-tractor text-emerald-500 mt-1"></i>
+                                <div>
+                                    <h5 class="text-sm font-bold text-gray-900 dark:text-white">Tarım Teknolojisi</h5>
+                                    <p class="text-xs text-gray-500 dark:text-gray-400">Şirket #3</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 4. MindSphere (Toplumsal Algı ve Kültür) -->
+                <div class="company-card group bg-gray-50 dark:bg-gray-800 rounded-3xl p-1 border border-gray-100 dark:border-gray-700 h-full flex flex-col">
+                    <div class="bg-white dark:bg-gray-800/50 rounded-[1.4rem] p-8 flex-1 flex flex-col h-full relative overflow-hidden">
+                        <div class="absolute top-0 right-0 w-32 h-32 bg-purple-500/5 rounded-bl-full -mr-8 -mt-8 pointer-events-none"></div>
+
+                        <div class="icon-box w-16 h-16 bg-purple-100 dark:bg-purple-900/30 rounded-2xl flex items-center justify-center mb-6 text-purple-600 dark:text-purple-400 transition-transform duration-500">
+                            <i class="fas fa-brain text-3xl"></i>
+                        </div>
+
+                        <h4 class="text-2xl font-bold mb-2 dark:text-white group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors">MindSphere</h4>
+                        <span class="text-xs font-bold text-purple-600 dark:text-purple-400 uppercase tracking-wider mb-4 border-b border-purple-100 dark:border-purple-900/50 pb-4 block">Medya, Eğitim & Oyun</span>
+
+                        <p class="text-gray-600 dark:text-gray-400 text-sm mb-8 leading-relaxed">
+                            İnsanın zihin dünyasını şekillendiren alanlar. Kültür, bilgi ve insan odaklı dönüşüm ("HumanX").
+                        </p>
+
+                        <div class="mt-auto space-y-4">
+                            <div class="flex items-start gap-3 p-3 rounded-xl bg-purple-50/50 dark:bg-purple-900/10 hover:bg-purple-100 dark:hover:bg-purple-900/20 transition">
+                                <i class="fas fa-gamepad text-purple-500 mt-1"></i>
+                                <div>
+                                    <h5 class="text-sm font-bold text-gray-900 dark:text-white">Oyun Şirketi</h5>
+                                    <p class="text-xs text-gray-500 dark:text-gray-400">Şirket #2</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-3 p-3 rounded-xl bg-purple-50/50 dark:bg-purple-900/10 hover:bg-purple-100 dark:hover:bg-purple-900/20 transition">
+                                <i class="fas fa-graduation-cap text-purple-500 mt-1"></i>
+                                <div>
+                                    <h5 class="text-sm font-bold text-gray-900 dark:text-white">Eğitim Şirketi</h5>
+                                    <p class="text-xs text-gray-500 dark:text-gray-400">Şirket #7</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-3 p-3 rounded-xl bg-purple-50/50 dark:bg-purple-900/10 hover:bg-purple-100 dark:hover:bg-purple-900/20 transition">
+                                <i class="fas fa-film text-purple-500 mt-1"></i>
+                                <div>
+                                    <h5 class="text-sm font-bold text-gray-900 dark:text-white">Medya Şirketi</h5>
+                                    <p class="text-xs text-gray-500 dark:text-gray-400">Şirket #11</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Stratejik Vizyon Bölümü -->
+    <section id="vision" class="py-20 bg-gray-50 dark:bg-gray-800 border-t border-gray-100 dark:border-gray-700">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row items-center gap-16">
+                <div class="md:w-1/2">
+                    <h2 class="text-3xl font-bold mb-6 dark:text-white">Yönetilebilir Büyüme Stratejisi</h2>
+                    <ul class="space-y-6">
+                        <li class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-full bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center flex-shrink-0 text-blue-600 dark:text-blue-400 font-bold">1</div>
+                            <div>
+                                <h4 class="font-bold text-lg dark:text-white">Çekirdek Odaklı Yapı</h4>
+                                <p class="text-gray-600 dark:text-gray-400 text-sm mt-1">
+                                    Teknolojiyi "İnsansız", "Kamu", "Sürdürülebilirlik" ve "Zihin" olarak 4 mantıklı kümeye ayırarak karmaşayı önlüyoruz.
+                                </p>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-full bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center flex-shrink-0 text-blue-600 dark:text-blue-400 font-bold">2</div>
+                            <div>
+                                <h4 class="font-bold text-lg dark:text-white">Marka Bütünlüğü</h4>
+                                <p class="text-gray-600 dark:text-gray-400 text-sm mt-1">
+                                    "AZSONTECH" ana çatı markası altında, her alt kol (TechCore, GreenWorks vb.) kendi uzmanlık alanını temsil ederken holding gücünden beslenir.
+                                </p>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-full bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center flex-shrink-0 text-blue-600 dark:text-blue-400 font-bold">3</div>
+                            <div>
+                                <h4 class="font-bold text-lg dark:text-white">Esnek Genişleme</h4>
+                                <p class="text-gray-600 dark:text-gray-400 text-sm mt-1">
+                                    Başlangıçta GreenWorks gibi belirli alanlara odaklanıp, zamanla diğer kolları güçlendirerek kontrollü bir büyüme sağlar.
+                                </p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <!-- Görselleştirme -->
+                <div class="md:w-1/2 relative">
+                    <div class="bg-white dark:bg-gray-700 rounded-3xl p-8 shadow-xl border border-gray-100 dark:border-gray-600 text-center relative z-10">
+
+                        <!-- BURASI DEĞİŞTİ – Eskiden 'A' yazıyordu -->
+                        <div class="w-24 h-24 mx-auto mb-6">
+                            <img src="assets/logo.png" alt="AZSONTECH Logo" class="w-full h-full object-contain">
+                        </div>
+
+                        <h3 class="text-2xl font-bold dark:text-white mb-2">AZSONTECH</h3>
+                        <p class="text-sm text-gray-500 mb-8">Merkezi Yönetim</p>
+
+                        <div class="grid grid-cols-2 gap-4">
+                            <div class="bg-blue-50 dark:bg-blue-900/20 p-4 rounded-xl">
+                                <span class="block text-blue-600 dark:text-blue-400 font-bold text-sm">TechCore</span>
+                            </div>
+                            <div class="bg-red-50 dark:bg-red-900/20 p-4 rounded-xl">
+                                <span class="block text-red-600 dark:text-red-400 font-bold text-sm">PublicTech</span>
+                            </div>
+                            <div class="bg-emerald-50 dark:bg-emerald-900/20 p-4 rounded-xl">
+                                <span class="block text-emerald-600 dark:text-emerald-400 font-bold text-sm">GreenWorks</span>
+                            </div>
+                            <div class="bg-purple-50 dark:bg-purple-900/20 p-4 rounded-xl">
+                                <span class="block text-purple-600 dark:text-purple-400 font-bold text-sm">MindSphere</span>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <!-- İletişim & Footer -->
+                    <footer id="contact" class="bg-white dark:bg-gray-950 text-gray-800 dark:text-gray-300 pt-20 pb-10 border-t border-gray-200 dark:border-gray-800">
+                        <div class="container mx-auto px-6">
+                            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+                                <!-- Kolon 1 -->
+                                <div>
+                                    <h4 class="text-2xl font-bold text-azson-blue dark:text-white mb-6 tracking-tighter">AZSONTECH</h4>
+                                    <p class="text-sm leading-relaxed text-gray-600 dark:text-gray-400 mb-6">
+                                        Geleceğin teknolojilerini, insan odaklı ve sürdürülebilir bir vizyonla bugünden tasarlayan global holding.
+                                    </p>
+                                    <div class="flex gap-4">
+                                        <a href="#" class="w-10 h-10 rounded-full bg-gray-100 dark:bg-gray-800 flex items-center justify-center hover:bg-azson-blue hover:text-white dark:hover:bg-blue-600 transition"><i class="fab fa-linkedin-in"></i></a>
+                                        <a href="#" class="w-10 h-10 rounded-full bg-gray-100 dark:bg-gray-800 flex items-center justify-center hover:bg-azson-blue hover:text-white dark:hover:bg-blue-600 transition"><i class="fab fa-twitter"></i></a>
+                                    </div>
+                                </div>
+
+                                <!-- Kolon 2 -->
+                                <div>
+                                    <h4 class="text-lg font-bold text-gray-900 dark:text-white mb-6">Holding Yapısı</h4>
+                                    <ul class="space-y-3 text-sm">
+                                        <li><a href="#" class="hover:text-azson-blue dark:hover:text-blue-400 transition font-medium">TechCore</a> <span class="text-xs text-gray-400 ml-1">- Mühendislik</span></li>
+                                        <li><a href="#" class="hover:text-azson-blue dark:hover:text-blue-400 transition font-medium">PublicTech</a> <span class="text-xs text-gray-400 ml-1">- Kamu</span></li>
+                                        <li><a href="#" class="hover:text-azson-blue dark:hover:text-blue-400 transition font-medium">GreenWorks</a> <span class="text-xs text-gray-400 ml-1">- Enerji</span></li>
+                                        <li><a href="#" class="hover:text-azson-blue dark:hover:text-blue-400 transition font-medium">MindSphere</a> <span class="text-xs text-gray-400 ml-1">- Kültür</span></li>
+                                    </ul>
+                                </div>
+
+                                <!-- Kolon 3 -->
+                                <div>
+                                    <h4 class="text-lg font-bold text-gray-900 dark:text-white mb-6">Kurumsal</h4>
+                                    <ul class="space-y-3 text-sm">
+                                        <li><a href="#" class="hover:text-azson-blue dark:hover:text-blue-400 transition">Hakkımızda</a></li>
+                                        <li><a href="#" class="hover:text-azson-blue dark:hover:text-blue-400 transition">Yatırımcı İlişkileri</a></li>
+                                        <li><a href="#" class="hover:text-azson-blue dark:hover:text-blue-400 transition">Sürdürülebilirlik</a></li>
+                                        <li><a href="#" class="hover:text-azson-blue dark:hover:text-blue-400 transition">İnsan Kaynakları</a></li>
+                                    </ul>
+                                </div>
+
+                                <!-- Kolon 4: İletişim -->
+                                <div>
+                                    <h4 class="text-lg font-bold text-gray-900 dark:text-white mb-6">İletişim</h4>
+                                    <ul class="space-y-4 text-sm">
+                                        <li class="flex items-start gap-3">
+                                            <i class="fas fa-map-marker-alt mt-1 text-azson-blue dark:text-blue-500"></i>
+                                            <span>Maslak Mah. Teknoloji Bulvarı<br>No: 123, İstanbul</span>
+                                        </li>
+                                        <li class="flex items-center gap-3">
+                                            <i class="fas fa-phone text-azson-blue dark:text-blue-500"></i>
+                                            <span>+90 (212) 555 00 00</span>
+                                        </li>
+                                        <li class="flex items-center gap-3">
+                                            <i class="fas fa-envelope text-azson-blue dark:text-blue-500"></i>
+                                            <span>info@azsontech.com</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="border-t border-gray-100 dark:border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-gray-500">
+                                <p>&copy; 2024 AZSONTECH Holding. Tüm hakları saklıdır.</p>
+                                <div class="flex gap-6 mt-4 md:mt-0">
+                                    <a href="#" class="hover:text-azson-blue dark:hover:text-white transition">Gizlilik Politikası</a>
+                                    <a href="#" class="hover:text-azson-blue dark:hover:text-white transition">Kullanım Koşulları</a>
+                                </div>
+                            </div>
+                        </div>
+                    </footer>
+
+                    <!-- Scriptler -->
+                    <script>
+                        // Dark Mode Mantığı
+                        const themeToggleBtn = document.getElementById('theme-toggle');
+                        const themeIcon = document.getElementById('theme-icon');
+                        const htmlElement = document.documentElement;
+
+                        // Sayfa yüklendiğinde tercih kontrolü
+                        function checkTheme() {
+                            if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                                htmlElement.classList.add('dark');
+                                updateIcon(true);
+                            } else {
+                                htmlElement.classList.remove('dark');
+                                updateIcon(false);
+                            }
+                        }
+
+                        // İkon güncelleme
+                        function updateIcon(isDark) {
+                            if (isDark) {
+                                themeIcon.classList.remove('fa-moon', 'text-gray-600');
+                                themeIcon.classList.add('fa-sun', 'text-yellow-400');
+                            } else {
+                                themeIcon.classList.remove('fa-sun', 'text-yellow-400');
+                                themeIcon.classList.add('fa-moon', 'text-gray-600');
+                            }
+                        }
+
+                        // Toggle işlemi
+                        themeToggleBtn.addEventListener('click', () => {
+                            if (htmlElement.classList.contains('dark')) {
+                                htmlElement.classList.remove('dark');
+                                localStorage.theme = 'light';
+                                updateIcon(false);
+                            } else {
+                                htmlElement.classList.add('dark');
+                                localStorage.theme = 'dark';
+                                updateIcon(true);
+                            }
+                        });
+
+                        // Başlangıçta çalıştır
+                        checkTheme();
+                    </script>
 </body>
 </html>
